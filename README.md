@@ -1,4 +1,4 @@
-# REACH + REACT BOILERPLATE :technologist:
+# MY DAO
 
 ### :question:	What is [Reach](https://docs.reach.sh/tut/overview/#overview)?
 
