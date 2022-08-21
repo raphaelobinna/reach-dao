@@ -1,14 +1,24 @@
-import { useState } from 'react'
-import './index.css'
+import { useState } from "react";
+import "./index.css";
 
-export function PasteContractInfo({attach}){
-  const [ info, setInfo ] = useState('')
+export function PasteContractInfo({ attach }) {
+  const [info, setInfo] = useState("");
 
-  return(
-    <div className='section' style={{display: 'flex', flexDirection: 'column'}}>
+  const wager = localStorage.getItem("wager");
+
+  return (
+    <div
+      className="section"
+      style={{ display: "flex", flexDirection: "column" }}
+    >
       <h5>Paste Contract Info</h5>
-      <textarea className='textarea' onChange={e => setInfo(e.target.value)}/>
-      <button className='button' onClick={() => attach(info)}>Attach To Contract</button>
+      <textarea
+        className="textarea"
+        value={`Accept to join the vote by paying ${wager}`}
+      />
+      <button className="button" onClick={() => attach()}>
+        Attach To Contract
+      </button>
     </div>
-  )
+  );
 }
