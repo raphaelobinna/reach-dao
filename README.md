@@ -1,6 +1,6 @@
 # MY DAO
 
-- Zubar DAO, is a DAO built with React and React. 
+- Zubar DAO, is a DAO built with Reach and React. 
 - Currently it is deployed on the algorand-testnet. 
 
 
