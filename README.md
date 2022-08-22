@@ -1,96 +1,20 @@
 # MY DAO
 
-### :question:	What is [Reach](https://docs.reach.sh/tut/overview/#overview)?
+- Zubar DAO, is a DAO built with React and React. 
+- Currently it is deployed on the algorand-testnet. 
 
 
-:bulb: DApps are made of multiple agents interacting with each other through some backend consensus network, like Ethereum or Algorand. 
+# How it works
 
-:bulb: In [Reach](https://docs.reach.sh/tut/overview/#overview), a programmer only needs to specify the actions of participants---what they do individually and what they do in unison. The [Reach](https://docs.reach.sh/tut/overview/#overview) compiler automatically derives a contract for the consensus network via a connector that enforces these rules. [More on [Reach](https://docs.reach.sh/tut/overview/#overview)](https://docs.[Reach](https://docs.reach.sh/tut/overview/#overview).sh/tut/overview/#overview)
+- Zubar DAO is a service which tests out the management of users in a mobile entertainment platform.
+- Zubar is a mobile application that allows users to upload songs and comics , and later on these contents are charted depending on the number of likes. Now there is a problem that has plagued platforms like this and has resulted in alot of manpower been inputed to curb it. 
+- Most platforms like this tend to be used to post illicit contents and results in them having to employ people that cross check contents uploaded to it. 
+- The Zubar DAO is what actually helps Zubar to solve this.
+- The Zubar DAO helps users to norminate other users whom they feel like have posted contents not meant to be on the platform. Other users do come and vote on whether such content is classified as illicit for the platform. once the vote ends after a period of time. An action is taken depending on the result. 
+- The result of this voting process is also displayed for everyone. This way every user, actually contributes to the rules and regulations of the platform and also saves the platform the manpower for effecting this rules and relegations . 
+- Zubar will be one of the first social platforms that is being run this way 
 
-[React](https://reactjs.org/docs/create-a-new-react-app.html) is [one of many](https://docs.reach.sh/frontend/#p_1) frameworks that can be implemented with [Reach](https://docs.reach.sh/tut/overview/#overview).
+### link to the zubar mobile code which is 90% done. 
+- https://github.com/raphaelobinna/zubar_react_native
 
-:seedling: This boilerplate helps kickstart your development of a Reach dAPP using React frontend.
-
----
-
-### USING [BOILERPLATE](https://github.com/paradoxfly/reach-react-boilerplate)
-
-#### File Directory
-```
-.
-|_ public (contains media files)
-|_ src (main app dir)
-|   |_ reach
-|   |   |_ .reach
-|   |   |_ build
-|           |_ index.main.mjs
-|   |   |_ index.rsh
-|   |   |_ reach
-|   |_ screens
-|       |_ ConnectAccount.jsx
-|       |_ index.css
-|       |_ index.js
-|       |_ PasteContractInfo.jsx
-|       |_ SelectRole.jsx
-|       |_ TestView.jsx
-|       |_ WaitForAttacher.jsx
-|   |_ utils
-|       |_ Constant.js
-|       |_ index.css
-|       |_ index.js
-|       |_ loader.jsx
-|   |_ App.css
-|   |_ App.test.js
-|   |_ index.css
-|   |_ index.js
-|   |_ logo.svg
-|   |_ reportWebVitals.js
-|   |_ setupTests.js
-|_ .gitignore
-|_ package.json
-|_ README.md
-```
-#### Requirements:
-
-:computer: Reach - https://docs.reach.sh/tut/rps/#tut-1
-
-:computer: git - https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
-
-:computer: yarn - https://classic.yarnpkg.com/lang/en/docs/install/#debian-stable
-
-#### Clone the repository
-
-`git clone https://github.com/paradoxfly/reach-react-boilerplate`
-
-#### Install the dependencies
-
-```
-yarn install
-
-# From the project root path
-
-cd src/reach
-
-# To compile to the latest version of REACH
-
-./reach compile
-```
-
----
-
-#### Test the Application
-
-
-Run `yarn start` to get your development server start.
-
-This opens a new browser with `localhost:3000` running.
-
-![startup](public/Startup%20Screen.png)
-
----
-
-#### Deployer and Attacher view
-
-Open `localhost:3000` on separate browsers to test using [MyAlgo](https://wallet.myalgo.com/) Testnet or it's Mnemonic keys.
-
-Implement your backend changes in `src/reach/index.rsh`
+- Thank you, as you encourage this experimental idea on the power of a DAO on a social media level
