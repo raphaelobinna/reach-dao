@@ -1,6 +1,8 @@
 # MY DAO
 
 - Zubar DAO, is a DAO built with Reach and React. 
+- Reach is a programming language, which is used to easily build Dapps to know more about the Reach programming language - https://docs.reach.sh/index/
+- React is a javascript frontend framework.
 - Currently it is deployed on the algorand-testnet. 
 
 
