@@ -26,13 +26,14 @@ function App() {
   const [view, setView] = useState(views.CONNECT_ACCOUNT);
   const [contractInfo, setContractInfo] = useState();
   const [attachInfo, setAttachInfo] = useState();
-  const [wager, setWager] = useState();
-  const [proposal, setProposal] = useState();
-  const [deadline, setDeadling] = useState();
   const [reason, setReason] = useState();
   const [choice, setChoice] = useState();
 
-  const [resolver, setResolver] = useState({ resolve: () => {} });
+  const [executed, setExecuted] = useState("");
+
+  const [resolver, setResolver] = useState({
+    resolve: () => {},
+  });
 
   const [knownProposal, setKnownProposal] = useState("");
 
@@ -40,7 +41,6 @@ function App() {
 
   const reachFunctions = {
     connect: async (secret, mnemonic = false) => {
-      console.log("mnemonic----", mnemonic);
       let result = "";
       try {
         const account = mnemonic
@@ -66,12 +66,8 @@ function App() {
 
     deploy: async () => {
       const contract = account.contract(backend);
-      //backend.OmegaUser(contract);
-      console.log("ppp-----", contract);
+      backend.OmegaUser(contract, OmegaUser);
       setView(views.DEPLOYING);
-      console.log("ppp---11--");
-      //const ctcInfo = JSON.stringify(await contract.getInfo(), null, 2);
-      // console.log("ppp---222--", ctcInfo);
       contract.getInfo().then((info) => {
         localStorage.setItem("contract", JSON.stringify(info));
       });
@@ -85,16 +81,9 @@ function App() {
       const info = JSON.parse(localStorage.getItem("contract"));
       console.log("info---", info);
       const contract = account.contract(backend, info);
-      //backend.NormalUser(contract, NormalUser);
-      // const ctcInfo = JSON.stringify(await contract.getInfo(), null, 2);
       setAttachInfo(contract);
       backend.NormalUser(contract, NormalUser);
-      // contract.p.NormalUser({
-      //   ...Common,
-      //   acceptWager: (amt) => {
-      //     console.log(`NormalUser accepts the wager of ${fmt(amt)}.`);
-      //   },
-      // });
+
       setTimeout(() => {
         setView(views.DAO_VOTE);
       }, 5000);
@@ -115,26 +104,6 @@ function App() {
       setView(views.DEPLOYING);
     },
 
-    addProposal: () => {
-      contractInfo.p.OmegaUser({ proposal: proposal });
-    },
-
-    addWager: () => {
-      contractInfo.p.OmegaUser({ wager: reach.formatCurrency(wager) });
-    },
-
-    addDeadline: () => {
-      contractInfo.p.OmegaUser({ deadline: deadline });
-    },
-
-    acceptWager: () => {
-      attachInfo.p.NormalUser({
-        ...Common,
-        acceptWager: (amt) => {
-          console.log(`NormalUser accepts the wager of ${fmt(amt)}.`);
-        },
-      });
-    },
     vote: (choice, reason) => {
       console.log("attach---", attachInfo);
       attachInfo.p.NormalUser({
@@ -181,10 +150,10 @@ function App() {
 
   const OmegaUser = {
     ...Common,
-
-    deadline: 0,
-    maxVoters: 0,
-    execute: () => {},
+    execute: () => {
+      //localStorage.setItem("executed", "Yes this was executed");
+      setExecuted("Yes this was executed");
+    },
   };
 
   const NormalUser = {
@@ -193,21 +162,26 @@ function App() {
       console.log(`NormalUser accepts the wager of ${fmt(amt)}.`);
     },
     vote: async () => {
-      console.log(`Chris voted ${HAND[choice]}`);
+      // console.log(`Chris voted ${HAND[choice]}`);
 
       return new Promise((resolve) => {
-        setResolver({ resolve: (choice) => resolve(choice) });
+        setResolver({
+          resolve: (choice) => {
+            console.log("we seeee-----", choice);
+            resolve(choice);
+          },
+        });
       });
     },
     reason: "I believe",
   };
 
-  console.log(knownProposal);
+  console.log(resolver);
 
   return (
     <div className="App">
       <div className="top">
-        <h1>Reach React Boilerplate</h1>
+        <h1>ZUBAR DAO</h1>
       </div>
       <header className="App-header">
         {view === views.CONNECT_ACCOUNT && (
@@ -231,7 +205,7 @@ function App() {
           <WaitForAttacher info={contractInfo} />
         )}
 
-        {view === views.DAO_RESULT && <DaoResult />}
+        {view === views.DAO_RESULT && <DaoResult executed={executed} />}
 
         {view === views.DAO_VOTE && (
           <DaoVote vote={(v) => resolver.resolve(v)} />
