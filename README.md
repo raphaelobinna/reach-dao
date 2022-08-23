@@ -30,6 +30,6 @@
 - https://zubar-dao.netlify.app
 
 ### demo video link
-- https://drive.google.com/file/d/15w296xZOpC0YgiAVTYyoVSJNkTbpNs8q/view?usp=sharing
+- https://youtu.be/blMIN9HGuFM
 
 - Thank you, as you encourage this experimental idea on the power of a DAO on a social media level
