@@ -26,4 +26,10 @@
 ### link to the zubar mobile code which is 90% done. 
 - https://github.com/raphaelobinna/zubar_react_native
 
+### link to the Zubar DAO, deployed on algorand test-net
+- https://zubar-dao.netlify.app
+
+### demo video link
+- https://drive.google.com/file/d/15w296xZOpC0YgiAVTYyoVSJNkTbpNs8q/view?usp=sharing
+
 - Thank you, as you encourage this experimental idea on the power of a DAO on a social media level
